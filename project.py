@@ -37,4 +37,3 @@ plt.plot(x,y5, label = "number of cases(thousands)")
 plt.xlabel('date')
 plt.legend()
 plt.show()
-
