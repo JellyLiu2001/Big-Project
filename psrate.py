@@ -20,7 +20,7 @@ print(psrate)
 
 import PIL
 import os
-from PIL import Image
+from PIL import Image        #模块导入
 im = Image.open('plane.png')#打开飞机图像
 print(im.size)#获得图像大小 最初是（500，500）
 
@@ -53,5 +53,6 @@ for each in psrate:                  #for循环，根据list中客座率来改�
         
     else:
         print("error")
+        
 
 
