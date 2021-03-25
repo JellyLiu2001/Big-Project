@@ -5,7 +5,10 @@ Created on Thu Mar 25 19:37:06 2021
 @author: 36182
 """
 import xlrd#导入Excel库
-T_sheet = xlrd.open_workbook("C:/Users/36182/Desktop/Big-Project/T_data数据汇总.xls")#设置表格路径
+import numpy as np
+
+
+T_sheet = xlrd.open_workbook("T_data数据汇总.xls")#设置表格路径
 xl_sheet = T_sheet.sheet_by_index(0)#设置表格中的sheet
 T_date = xl_sheet.row_values(1)#总日期
 T_income = xl_sheet.row_values(2)#总收入
@@ -13,17 +16,14 @@ T_psrate = xl_sheet.row_values(3)#总客座率
 T_outcome = xl_sheet.row_values(4)#总支出
 T_flight = xl_sheet.row_values(5)#总航班数
 T_sick = xl_sheet.row_values(6)#总生病人数
-print(T_date,T_income,T_psrate,T_outcome,T_flight,T_sick)#打印所有数据
 
-psr = list(T_psrate)
-psrate = psr.remove('客座率Lau')  #去除字符串
+psrate=np.array(T_psrate[1:]) #去除字符串
 print(psrate)
-
 
 import PIL
 import os
 from PIL import Image        #模块导入
-im = Image.open('plane.png')#打开飞机图像
+im = Image.open('images\plane.jpg')#打开飞机图像
 print(im.size)#获得图像大小 最初是（500，500）
 
 pix = im.load()#导入像素
@@ -55,6 +55,3 @@ for each in psrate:                  #for循环，根据list中客座率来改�
         
     else:
         print("error")
-        
-
-
