@@ -5,8 +5,8 @@ wangyue yuewang1205
 Zihe Zhu mf20187
 
 Data part: DDL 03/28/2021
-Lau: 数据用折线图表示=Numpy, matplotlab,Seaborn and pandas
-Yue: 用飞机的大小来表示客座率
+Lau: Making all datas in a line charts
+Yue: Using the site of plane to represent the seat availability.
 zhu: 感染人数用颜色表示：
 	有新增的时候是红色，无新增时飞机为绿色
 	颜色的变化called 航班风险
