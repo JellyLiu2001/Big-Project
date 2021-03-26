@@ -15,7 +15,7 @@ with cbook.get_sample_data(P_path) as image_file:
     
 plt.rcParams['savefig.dpi'] = 1 #分辨率
 fig, ax = plt.subplots()
-ax.imshow(image)
+ax.imshow(image)#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ax.axis('on')  # clear x-axis and y-axis
 ax.set_title('CT density')
 
