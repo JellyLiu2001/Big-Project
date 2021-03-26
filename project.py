@@ -1,6 +1,9 @@
 import xlrd
 import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
 import numpy as np
+
+
 
 workbook = xlrd.open_workbook('T_data数据汇总.xlsx')
 xl_sheet = workbook.sheet_by_index(0)
