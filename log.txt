@@ -17,3 +17,7 @@ LOG HISTORY
 ----------------------------------------------------------------------------------------------
 Jelly: Changed all files' location and renamed to make it easy to understand. 3/23/2021
 ----------------------------------------------------------------------------------------------
+yue: first edition of "Using the site of plane to represent the seat availability." 
+generate different size of picture according to the data, add them into a folder.
+put them in one picture  3/26/2021
+----------------------------------------------------------------------------------------------
