@@ -18,6 +18,7 @@ T_flight = xl_sheet.row_values(5)#总航班数
 T_sick = xl_sheet.row_values(6)#总生病人数
 
 psrate=np.array(T_psrate[1:]) #去除字符串
+date=np.array(T_date[1:])
 print(psrate)
 
 import PIL
