@@ -17,3 +17,7 @@ LOG HISTORY
 ----------------------------------------------------------------------------------------------
 Jelly: Changed all files' location and renamed to make it easy to understand. 3/23/2021
 ----------------------------------------------------------------------------------------------
+Lau: made a matplot graph(basic version) using xlrd, numpy, matplotlib. 24/3/2021
+----------------------------------------------------------------------------------------------
+Lau: made a animated graph using pandas, seaborns, numpy, ffmpeg, matplotlib. 25/3/2021
+----------------------------------------------------------------------------------------------
