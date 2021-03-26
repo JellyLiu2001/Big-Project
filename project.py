@@ -1,6 +1,9 @@
 import xlrd
 import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
 import numpy as np
+
+
 
 workbook = xlrd.open_workbook('T_data数据汇总.xlsx')
 xl_sheet = workbook.sheet_by_index(0)
@@ -29,11 +32,11 @@ y4 = outcome/10
 y5 = sick/1000
 
 # plotting the graph and labelling all the lines with the units
-plt.plot(x,y1, label = "passenger rate(percents)")
-plt.plot(x,y2, label = "numbers of flight(hundreds)")
-plt.plot(x,y3, label = "amount of income(billions)")
-plt.plot(x,y4, label = "amount of outcome(billions)")
-plt.plot(x,y5, label = "number of cases(thousands)")
+plt.plot(x,y1, label = "Passenger rate(percents)")
+plt.plot(x,y2, label = "Numbers of flight(hundreds)")
+plt.plot(x,y3, label = "Amount of income(billions)")
+plt.plot(x,y4, label = "Amount of outcome(billions)")
+plt.plot(x,y5, label = "Number of cases(thousands)")
 plt.xlabel('date')
 plt.legend()
 plt.show()
