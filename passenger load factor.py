@@ -8,7 +8,7 @@ import xlrd
 import numpy as np
 
 
-T_sheet = xlrd.open_workbook("C:/Users/36182/Desktop/Big-Project/T_data数据汇总.xls")#path
+T_sheet = xlrd.open_workbook("C:/Users/36182/Desktop/Big-Project/new data for graph.xlsx")#path
 xl_sheet = T_sheet.sheet_by_index(0)
 T_date = xl_sheet.row_values(1)#date
 T_income = xl_sheet.row_values(2)#income
@@ -30,7 +30,7 @@ print(dict1)
 import matplotlib.pyplot as plt
 import os
 from PIL import Image       
-im = Image.open('C:/Users/36182/Desktop/Big-Project/plane.png') #open the image of the plane
+im = Image.open('C:/Users/36182/Desktop/Big-Project/images/plane1.png') #open the image of the plane
 print(im.size)#get the size of the image, whcihc is （500，500）at the beginning
 
 pix = im.load()#pixel
@@ -86,11 +86,11 @@ def plt_images_wall(img_path):
     for img in imgs_name:
         imgs_path.append(os.path.join(img_path + "/", img))
 
-    if int(len(imgs_path) / 4) != 0:   # 想要显示多行图片更改一下就可以
+    if int(len(imgs_path) / 4) != 0:   
 
         for i in range(len(imgs_path)):
             print(int(str(4) + str(int(len(imgs_path) / 4)) + str(i + 1)))
-			# 引入正则是为了解决浮点数的错误问题
+	
             tmp = str(int(len(imgs_path) / 4))
             tmp = re.match("[0-9]", tmp)
             tmp = tmp.string
@@ -110,7 +110,7 @@ plt_images_wall('new_plane')  #此处调用函数，输入'文件夹名称'
 # new_plane文件夹里为 之前 for循环导入的飞机图
 
 os.remove('C:/Users/36182/Desktop/new_plane')
-#remove the file)
+#remove the file
 
 
 
