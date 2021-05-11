@@ -4,63 +4,71 @@ Created on Thu Mar 25 19:37:06 2021
 
 @author: 36182
 """
-import xlrd#导入Excel库
+import xlrd
 import numpy as np
 
 
-T_sheet = xlrd.open_workbook("C:/Users/36182/Desktop/Big-Project/T_data数据汇总.xls")#设置表格路径
-xl_sheet = T_sheet.sheet_by_index(0)#设置表格中的sheet
-T_date = xl_sheet.row_values(1)#总日期
-T_income = xl_sheet.row_values(2)#总收入
-T_psrate = xl_sheet.row_values(3)#总客座率
-T_outcome = xl_sheet.row_values(4)#总支出
-T_flight = xl_sheet.row_values(5)#总航班数
-T_sick = xl_sheet.row_values(6)#总生病人数
-print(T_date,T_income,T_psrate,T_outcome,T_flight,T_sick)#打印所有数据
+T_sheet = xlrd.open_workbook("C:/Users/36182/Desktop/Big-Project/T_data数据汇总.xls")#path
+xl_sheet = T_sheet.sheet_by_index(0)
+T_date = xl_sheet.row_values(1)#date
+T_income = xl_sheet.row_values(2)#income
+T_psrate = xl_sheet.row_values(3)#psrate
+T_outcome = xl_sheet.row_values(4)#outcome
+T_flight = xl_sheet.row_values(5)#number of flights
+T_sick = xl_sheet.row_values(6)#number of sickness people
+print(T_date,T_income,T_psrate,T_outcome,T_flight,T_sick)#print all the date
 
-psrate=np.array(T_psrate[1:]) #去除字符串
+psrate=np.array(T_psrate[1:]) #remove the string in excel
 print(psrate)
+date1=np.array(T_date[1:])
+print(date1)
 
-import PIL
+dict1=dict(zip(psrate,date1))#create a dictionary
+print(dict1)
+
+
 import matplotlib.pyplot as plt
 import os
-from PIL import Image        #模块导入A
-im = Image.open('plane.png') #打开飞机图像
-print(im.size)#获得图像大小 最初是（500，500）
+from PIL import Image       
+im = Image.open('C:/Users/36182/Desktop/Big-Project/plane.png') #open the image of the plane
+print(im.size)#get the size of the image, whcihc is （500，500）at the beginning
 
-pix = im.load()#导入像素
-width = im.size[0] #获取宽度
-height = im.size[1] #获取长度
+pix = im.load()#pixel
+width = im.size[0] #get the width
+height = im.size[1] #get the height
 
-def n_size(x,y):  #创建一个函数，来改变image大小（resize）
-    global new_im   #把改成全局
-    new_im = im.resize((x,y))   #重新resize
-    return new_im.show()
+def n_size(x,y):  #create a function to resize the image
+    global new_im   #change the variable to globale variable
+    new_im = im.resize((x,y))   #resize the image
+    return new_im
 
-for each in psrate:                  #for循环，根据list中客座率来改变大小
-    if 50 <= int(each) < 55:
-        n_size(100,100)            #调用函数
-        new_im.save('C:/Users/36182/Desktop/new_plane/{0}.png'.format(each))  #归类，一共6种飞机大小
-        
-    elif 55 <= int(each) < 60:
+
+os.mkdir('C:/Users/36182/Desktop/new_plane')#create a file
+
+for each in dict1.keys():    #use for loop to change the size of the image according to the psrate
+    if 50 <= float(each) < 55:
+        n_size(100,100)          
+        new_im.save('C:/Users/36182/Desktop/new_plane/{0}.png'.format(dict1[each])) #use foramt to name the image with the date   
+        #save the image in a file
+    elif 55 <= float(each) < 60:
         n_size(200,200)
-        new_im.save('C:/Users/36182/Desktop/new_plane/{0}.png'.format(each))
+        new_im.save('C:/Users/36182/Desktop/new_plane/{0}.png'.format(dict1[each]))
         
-    elif 60 <= int(each) < 65:
+    elif 60 <= float(each) < 65:
         n_size(300,300)
-        new_im.save('C:/Users/36182/Desktop/new_plane/{0}.png'.format(each))
+        new_im.save('C:/Users/36182/Desktop/new_plane/{0}.png'.format(dict1[each]))
         
-    elif 65 <= int(each) < 70:
+    elif 65 <= float(each) < 70:
         n_size(400,400)
-        new_im.save('C:/Users/36182/Desktop/new_plane/{0}.png'.format(each))
+        new_im.save('C:/Users/36182/Desktop/new_plane/{0}.png'.format(dict1[each]))
         
-    elif 70 <= int(each) < 75:
+    elif 70 <= float(each) < 75:
         n_size(500,500)
-        new_im.save('C:/Users/36182/Desktop/new_plane/{0}.png'.format(each))
+        new_im.save('C:/Users/36182/Desktop/new_plane/{0}.png'.format(dict1[each]))
         
-    elif 75 <= int(each) < 80:
+    elif 75 <= float(each) < 80:
         n_size(600,600)
-        new_im.save('C:/Users/36182/Desktop/new_plane/{0}.png'.format(each))
+        new_im.save('C:/Users/36182/Desktop/new_plane/{0}.png'.format(dict1[each]))
         
     else:
         print("error")
@@ -78,17 +86,17 @@ def plt_images_wall(img_path):
     for img in imgs_name:
         imgs_path.append(os.path.join(img_path + "/", img))
 
-    if int(len(imgs_path) / 2) != 0:   # 行
+    if int(len(imgs_path) / 4) != 0:   # 想要显示多行图片更改一下就可以
 
         for i in range(len(imgs_path)):
-            print(int(str(2) + str(int(len(imgs_path) / 2)) + str(i + 1)))
+            print(int(str(4) + str(int(len(imgs_path) / 4)) + str(i + 1)))
 			# 引入正则是为了解决浮点数的错误问题
-            tmp = str(int(len(imgs_path) / 2))
+            tmp = str(int(len(imgs_path) / 4))
             tmp = re.match("[0-9]", tmp)
             tmp = tmp.string
 
-            plt.subplot(int(str(2) + str(tmp) + str(i + 1)))
-            plt.title(each)
+            plt.subplot(int(str(4) + str(tmp) + str(i + 1)))
+            plt.title("image" + str((i + 1)))
             plt.axis("on")   # 打开坐标轴
             plt.imshow(Image.open(imgs_path[i]))
         plt.savefig("plt_wall.jpg")
@@ -96,10 +104,13 @@ def plt_images_wall(img_path):
     plt.show()
 
 if __name__ == "__main__":
-    plt_images_wall("new_plane") #这段不知道干嘛的，没看懂
+    plt_images_wall("new_plane") 
 
 plt_images_wall('new_plane')  #此处调用函数，输入'文件夹名称'  
 # new_plane文件夹里为 之前 for循环导入的飞机图
+
+os.remove('C:/Users/36182/Desktop/new_plane')
+#remove the file)
 
 
 
