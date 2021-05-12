@@ -1,6 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Mar 25 19:37:06 2021
+Created on Wed May 12 13:34:46 2021
+
+@author: 36182
+"""
+
+# -*- coding: utf-8 -*-
+"""
+Created on Tue May 11 11:54:28 2021
 
 @author: 36182
 """
@@ -27,7 +34,7 @@ dict1=dict(zip(psrate,date1))#create a dictionary
 print(dict1)
 
 
-import matplotlib.pyplot as plt
+
 import os
 from PIL import Image       
 im = Image.open('C:/Users/36182/Desktop/Big-Project/images/plane1.png') #open the image of the plane
@@ -45,11 +52,11 @@ def n_size(x,y):  #create a function to resize the image
 
 os.mkdir('C:/Users/36182/Desktop/new_plane')#create a file
 
-for each in dict1.keys():    #use for loop to change the size of the image according to the psrate
+for each in dict1.keys():    #use for loop to change the size of the image according to the load factor
     if 50 <= float(each) < 55:
         n_size(100,100)          
         new_im.save('C:/Users/36182/Desktop/new_plane/{0}.png'.format(dict1[each])) #use foramt to name the image with the date   
-        #save the image in a file
+        #save the image in a folder
     elif 55 <= float(each) < 60:
         n_size(200,200)
         new_im.save('C:/Users/36182/Desktop/new_plane/{0}.png'.format(dict1[each]))
@@ -72,46 +79,70 @@ for each in dict1.keys():    #use for loop to change the size of the image accor
         
     else:
         print("error")
-        
+        #the images are named with the date(month.week)
+#===============================================================================
+
+import tkinter as tk  # import tkinter
+ 
+# step1: create a window
+window = tk.Tk()
+#name the window
+window.title('passenger load factor')
+ 
+# set the size of the window 
+window.geometry('500x300')  #length x width
+window.resizable(True,True)  #the window can be resizable
+
+
+window.columnconfigure(0, weight = 1)
+window.rowconfigure(0, weight = 1)
+
+# step2: labels
+picture = tk.PhotoImage(file = 'C:/Users/36182/Desktop/new_plane/2.1.png') 
+Lab = tk.Label(window, image = picture)
+Lab.grid(column=0, row=1) #set location
+#label the image(initial image)
+
+lb = tk.Label(window, bg='pink', fg='white',font=('Arial', 14), width=13, text = 'month.week')
+lb.grid(column=0, row=50)
+#label the text(initial text)
+
+# step3: set listbox
+lists = (date1) #give value (the 'tens' means month, the 'ones' means which week in this month) to the lists
+lists_var = tk.StringVar(value = lists)
+
+listbox = tk.Listbox(window, listvariable = lists_var, height = 8) #set the listbox
+listbox.delete(0) #remove the first element because it contains'['
+listbox.delete(22) #remove the last element becayse it contains ']'
+listbox.insert(0,'1.1') #add 1.1 to the first
+listbox.insert(23,'8.3') #add 8.3 to the last
+listbox.grid(column=0, row=100)
 
 
 
-import re
 
 
-def plt_images_wall(img_path):
-    imgs_path = []
-    imgs_name = os.listdir(img_path)
 
-    for img in imgs_name:
-        imgs_path.append(os.path.join(img_path + "/", img))
-
-    if int(len(imgs_path) / 4) != 0:   
-
-        for i in range(len(imgs_path)):
-            print(int(str(4) + str(int(len(imgs_path) / 4)) + str(i + 1)))
-	
-            tmp = str(int(len(imgs_path) / 4))
-            tmp = re.match("[0-9]", tmp)
-            tmp = tmp.string
-
-            plt.subplot(int(str(4) + str(tmp) + str(i + 1)))
-            plt.title("image" + str((i + 1)))
-            plt.axis("on")   # 打开坐标轴
-            plt.imshow(Image.open(imgs_path[i]))
-        plt.savefig("plt_wall.jpg")
-
-    plt.show()
-
-if __name__ == "__main__":
-    plt_images_wall("new_plane") 
-
-plt_images_wall('new_plane')  #此处调用函数，输入'文件夹名称'  
-# new_plane文件夹里为 之前 for循环导入的飞机图
-
-os.remove('C:/Users/36182/Desktop/new_plane')
-#remove the file
+def items_selected(event):
+    selected_indices = listbox.curselection()  
+    selected_value = listbox.get(selected_indices[0])  #give the selected value in the listbox to the varialble: selected_value
+    print(selected_value)
+    lb['text'] = selected_value   #change the labeled text to the selected value
+    
+    
+    global file_name
+    file_name = 'C:/Users/36182/Desktop/new_plane/'+selected_value+'.png'  
+    global picture
+    global Lab
+    picture = tk.PhotoImage(file = file_name) 
+    Lab = tk.Label(window, image = picture) 
+    Lab.grid(column=0, row=1)
+#change the displayed image, which file name is corresponding to the selected value(month.week)
+    print(file_name)
 
 
 
 
+listbox.bind('<<ListboxSelect>>', items_selected) #bind the function to the listbox
+
+window.mainloop()
