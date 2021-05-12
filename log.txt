@@ -17,11 +17,10 @@ LOG HISTORY
 ----------------------------------------------------------------------------------------------
 Jelly: Changed all files' location and renamed to make it easy to understand. 3/23/2021
 ----------------------------------------------------------------------------------------------
-<<<<<<< HEAD
 yue: first edition of "Using the size of plane to represent the passenger load factor". 
 generate different size of picture according to the data, add them into a folder.
-put them in one picture  3/26/2021
-=======
+generate a picture to compare their sizes.  3/26/2021
+----------------------------------------------------------------------------------------------
 Jelly: Create the file of change the plane's color. 03/26/2021
 ----------------------------------------------------------------------------------------------
 Lau: made a matplot graph(basic version) using xlrd, numpy, matplotlib. 03/24/2021
@@ -29,3 +28,5 @@ Lau: made a matplot graph(basic version) using xlrd, numpy, matplotlib. 03/24/20
 Lau: made a animated graph using pandas, seaborns, numpy, ffmpeg, matplotlib. 03/4/2021
 >>>>>>> 1015b920a1f9da0425ee3d8dc4de54d4953c45f2
 ----------------------------------------------------------------------------------------------
+yue: use tkinter to create a GUI, when user choose a date in the listbox, an image of a plane will 
+      be displayed,the size of the plane shows the passenger load factor at that date. 12/5/2021
