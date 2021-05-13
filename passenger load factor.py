@@ -104,7 +104,7 @@ Lab.grid(column=0, row=1) #set location
 #label the image(initial image)
 
 lb = tk.Label(window, bg='pink', fg='white',font=('Arial', 14), width=13, text = 'month.week')
-lb.grid(column=0, row=50)
+lb.grid(column=0, row=30)
 #label the text(initial text)
 
 # step3: set listbox
@@ -123,7 +123,7 @@ listbox.grid(column=0, row=100)
 
 
 
-def items_selected(event):
+def items_selected():
     selected_indices = listbox.curselection()  
     selected_value = listbox.get(selected_indices[0])  #give the selected value in the listbox to the varialble: selected_value
     print(selected_value)
@@ -140,9 +140,11 @@ def items_selected(event):
 #change the displayed image, which file name is corresponding to the selected value(month.week)
     print(file_name)
 
+button = tk.Button(window, text='confirm', width=20, height=1, command = items_selected)
+button.grid(column=0, row=60)
 
 
 
-listbox.bind('<<ListboxSelect>>', items_selected) #bind the function to the listbox
+#listbox.bind('<<ListboxSelect>>', items_selected) #bind the function to the listbox
 
 window.mainloop()
