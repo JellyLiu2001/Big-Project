@@ -15,7 +15,7 @@ import xlrd
 import numpy as np
 
 
-T_sheet = xlrd.open_workbook("C:/Users/36182/Desktop/Big-Project/new data for graph.xlsx")#path
+T_sheet = xlrd.open_workbook("new data for graph.xlsx")#path
 xl_sheet = T_sheet.sheet_by_index(0)
 T_date = xl_sheet.row_values(1)#date
 T_income = xl_sheet.row_values(2)#income
@@ -37,7 +37,7 @@ print(dict1)
 
 import os
 from PIL import Image       
-im = Image.open('C:/Users/36182/Desktop/Big-Project/images/plane1.png') #open the image of the plane
+im = Image.open('images\plane1.png') #open the image of the plane
 print(im.size)#get the size of the image, whcihc is （500，500）at the beginning
 
 pix = im.load()#pixel
