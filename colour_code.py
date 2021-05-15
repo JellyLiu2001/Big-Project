@@ -14,7 +14,7 @@ T_new = xl_sheet.row_values(7)#新增感染人数
 
 # insert 'plane' image for map animation 
 from PIL import Image
-myImage = Image.open("C:/Users/朱子赫/FCP/Big-Project/images/plane.jpg");
+myImage = Image.open("images\plane.jpg");
 # myImage.show()
 
 # identify the cases of the day by three classes (test)
