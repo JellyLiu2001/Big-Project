@@ -1,5 +1,5 @@
 import xlrd#导入Excel库
-T_sheet = xlrd.open_workbook("T_data数据汇总.xls")#设置表格路径
+T_sheet = xlrd.open_workbook("T_data数据汇总.xlsx")#设置表格路径
 xl_sheet = T_sheet.sheet_by_index(0)#设置表格中的sheet
 T_date = xl_sheet.row_values(1)#总日期
 T_income = xl_sheet.row_values(2)#总收入

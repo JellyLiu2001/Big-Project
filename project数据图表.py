@@ -39,4 +39,5 @@ plt.plot(x,y4, label = "Amount of outcome(billions)")
 plt.plot(x,y5, label = "Number of cases(thousands)")
 plt.xlabel('date')
 plt.legend()
+plt.savefig(fname="datachart.png")#save the chart as png
 plt.show()
