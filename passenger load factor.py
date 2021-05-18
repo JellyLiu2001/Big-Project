@@ -123,6 +123,11 @@ lb = tk.Label(window, bg='pink', fg='white',font=('Arial', 14), width=13, text =
 lb.grid(column=0, row=30)
 #label the text(initial text)
 
+lb3 = tk.Label(window, bg='lightgrey', fg='white', font=(
+    'Arial', 14), width=20, text='the larger the size'"\n"'the higher the loar factor')
+lb3.grid(column=1, row=1)
+# notes
+
 # step3: set listbox
 lists = (date1) #give value (the 'tens' means month, the 'ones' means which week in this month) to the lists
 lists_var = tk.StringVar(value = lists)
@@ -138,11 +143,13 @@ listbox.grid(column=0, row=100)
 
 
 
-
 def items_selected():
     selected_indices = listbox.curselection()  
+    global selected_value
     selected_value = listbox.get(selected_indices[0])  #give the selected value in the listbox to the varialble: selected_value
+
     print(selected_value)
+
     lb['text'] = selected_value   #change the labeled text to the selected value
     
     
