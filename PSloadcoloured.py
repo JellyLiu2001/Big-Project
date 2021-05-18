@@ -3,9 +3,7 @@ import tkinter as tk  # import tkinter
 import xlrd
 import numpy as np
 import os
-from PIL import Image
-
-
+from PIL import ImageFont, ImageDraw, Image, ImageEnhance, ImageFilter
 xlrd.xlsx.ensure_elementtree_imported(False, None)
 xlrd.xlsx.Element_has_iter = True
 
@@ -21,9 +19,7 @@ T_sick = xl_sheet.row_values(6)  # number of sickness people
 T_new = xl_sheet.row_values(7)  # number of new cases
 
 psrate = np.array(T_psrate[1:])  # remove the string in excel
-print(psrate)
 date1 = np.array(T_date[1:])
-print(date1)
 dict1 = dict(zip(psrate, date1))  # create a dictionary
 print(dict1)
 new = np.array(T_new[1:])
@@ -51,7 +47,9 @@ if not os.path.exists('images/new_plane'):                                     #
 
 for each in dict1.keys(): # use for loop to change the size of the image according to the load factor
 
-    img = select_image(dict2[dict1[each]])                                     #Zihe: chosing corresponsing image dependent on cases of the day 
+    img = select_image(dict2[dict1[each]])  
+    #Zihe: chosing corresponsing image dependent on cases of the day 
+   
     if 50 <= float(each) < 55:
         new_im = n_size(100, 100, img)
         # use foramt to name the image with the date

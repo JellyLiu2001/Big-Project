@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon May 17 12:08:40 2021
 
-@author: 朱子赫
-"""
 
 import xlrd
 import numpy as np
