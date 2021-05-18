@@ -114,7 +114,7 @@ window.columnconfigure(0, weight = 1)
 window.rowconfigure(0, weight = 1)
 
 # step2: labels
-picture = tk.PhotoImage(file = 'images/new_plane/2.2.png') 
+picture = tk.PhotoImage(file = 'images/new_plane/2.1.png') 
 Lab = tk.Label(window, image = picture)
 Lab.grid(column=0, row=1) #set location
 #label the image(initial image)
