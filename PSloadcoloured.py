@@ -56,41 +56,57 @@ if not os.path.exists('images/new_plane'):                                     #
 for each in dict1.keys(): # use for loop to change the size of the image according to the load factor
 
     img = select_image(dict2[dict1[each]])                                     #Zhu: chosing corresponsing image dependent on cases of the day 
-    if 50 <= float(each) < 55:
-        new_im = n_size(100, 100, img)
-        # use foramt to name the image with the date
+    if 50 <= float(each) < 53:
+        new_im = n_size(100, 100, img)        
         new_im.save('images/new_plane/{0}.png'.format(dict1[each]))
-        # save the image in a folder
-    elif 55 <= float(each) < 60:
+        #use foramt to name the image with the date   
+        #save the image in a folder
+    elif 53 <= float(each) < 56:
+        new_im = n_size(150, 150, img)
+        new_im.save('images/new_plane/{0}.png'.format(dict1[each]))
+        
+    elif 56 <= float(each) < 59:
         new_im = n_size(200, 200, img)
         new_im.save('images/new_plane/{0}.png'.format(dict1[each]))
-
-    elif 60 <= float(each) < 65:
+        
+    elif 59 <= float(each) < 62:
+        new_im = n_size(250, 250, img)
+        new_im.save('images/new_plane/{0}.png'.format(dict1[each]))
+        
+    elif 62 <= float(each) < 65:
         new_im = n_size(300, 300, img)
         new_im.save('images/new_plane/{0}.png'.format(dict1[each]))
-
-    elif 65 <= float(each) < 70:
-        new_im = n_size(400, 400, img)
+        
+    elif 65 <= float(each) < 68:
+        new_im = n_size(350, 350, img)
         new_im.save('images/new_plane/{0}.png'.format(dict1[each]))
-
-    elif 70 <= float(each) < 75:
+        
+        
+        
+    elif 68 <= float(each) < 71:
+        new_im = n_size(400, 400, img)      
+        new_im.save('images/new_plane/{0}.png'.format(dict1[each])) 
+        #save the image in a folder
+    elif 71 <= float(each) < 74:
+        new_im = n_size(450, 450, img)
+        new_im.save('images/new_plane/{0}.png'.format(dict1[each]))
+        
+    elif 74 <= float(each) < 77:
         new_im = n_size(500, 500, img)
         new_im.save('images/new_plane/{0}.png'.format(dict1[each]))
+        
 
-    elif 75 <= float(each) < 80:
-        new_im = n_size(600, 600, img)
-        new_im.save('images/new_plane/{0}.png'.format(dict1[each]))
 
     else:
-        print("error")
-        # the images are named with the date(month.week)
+      print("error")
+        #the images are named with the date(month.week)
 # ===============================================================================
 
 
 # step1: create a window
 window = tk.Tk()
 # name the window
-window.title('passenger load factor')
+window.title('passenger load factor(size)/new case(colour)')
 
 # set the size of the window
 window.geometry('500x300')  # length x width
@@ -101,7 +117,7 @@ window.columnconfigure(0, weight=1)
 window.rowconfigure(0, weight=1)
 
 # step2: labels
-picture = tk.PhotoImage(file='images/new_plane/1.1.png')
+picture = tk.PhotoImage(file='images/new_plane/2.1.png')
 Lab = tk.Label(window, image = picture)
 Lab.grid(column=0, row=1)  # set location
 # label the image(initial image)
@@ -156,3 +172,6 @@ button.grid(column=0, row=60)
 # listbox.bind('<<ListboxSelect>>', items_selected) #bind the function to the listbox
 
 window.mainloop()
+for each1 in dict1.values():
+    os.remove('images/new_plane/{0}.png'.format(each1))
+os.rmdir('images/new_plane')       #remove the images first and remove the folder after finishing using it.

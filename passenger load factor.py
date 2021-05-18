@@ -54,7 +54,7 @@ os.mkdir('images/new_plane')#create a folder
 
 for each in dict1.keys():    #use for loop to change the size of the image according to the load factor
     if 50 <= float(each) < 53:
-        n_size(100,100)          #这里和底下也都只要改new_plane前面部分，和上面一样改成桌面的路径，就是把图片生成在刚才创建的文件夹里
+        n_size(100,100)       
         new_im.save('images/new_plane/{0}.png'.format(dict1[each])) #use foramt to name the image with the date   
         #save the image in a folder
     elif 53 <= float(each) < 56:
