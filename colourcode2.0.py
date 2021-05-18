@@ -45,7 +45,6 @@ else:
     im = Image.open('images\red.jpg')
     # print("多")
     
-     #这也只要改big project前面的，是我放在big project里面的.png图片的路径
 # im = Image.open('images/plane1.jpg') #open the image of the plane
 print(im.size)#get the size of the image, whcihc is （500，500）at the beginning
 
@@ -59,35 +58,51 @@ def n_size(x,y):  #create a function to resize the image
     return new_im
 
 #改new_plane前面的路径，这是创建一个文件架在你的桌面上，只要把new_plane前面部分改成你桌面的路径
-os.mkdir('images/new_plane')#create a file
+os.mkdir('images/new_plane')#create a folder
 
 for each in dict1.keys():    #use for loop to change the size of the image according to the load factor
-    if 50 <= float(each) < 55:
+    if 50 <= float(each) < 53:
         n_size(100,100)          #这里和底下也都只要改new_plane前面部分，和上面一样改成桌面的路径，就是把图片生成在刚才创建的文件夹里
         new_im.save('images/new_plane/{0}.png'.format(dict1[each])) #use foramt to name the image with the date   
         #save the image in a folder
-    elif 55 <= float(each) < 60:
+    elif 53 <= float(each) < 56:
+        n_size(150,150)
+        new_im.save('images/new_plane/{0}.png'.format(dict1[each]))
+        
+    elif 56 <= float(each) < 59:
         n_size(200,200)
         new_im.save('images/new_plane/{0}.png'.format(dict1[each]))
         
-    elif 60 <= float(each) < 65:
+    elif 59 <= float(each) < 62:
+        n_size(250,250)
+        new_im.save('images/new_plane/{0}.png'.format(dict1[each]))
+        
+    elif 62 <= float(each) < 65:
         n_size(300,300)
         new_im.save('images/new_plane/{0}.png'.format(dict1[each]))
         
-    elif 65 <= float(each) < 70:
-        n_size(400,400)
+    elif 65 <= float(each) < 68:
+        n_size(350,350)
         new_im.save('images/new_plane/{0}.png'.format(dict1[each]))
         
-    elif 70 <= float(each) < 75:
+        
+        
+    elif 68 <= float(each) < 71:
+        n_size(400,400)         
+        new_im.save('images/new_plane/{0}.png'.format(dict1[each])) 
+        #save the image in a folder
+    elif 71 <= float(each) < 74:
+        n_size(450,450)
+        new_im.save('images/new_plane/{0}.png'.format(dict1[each]))
+        
+    elif 74 <= float(each) < 77:
         n_size(500,500)
         new_im.save('images/new_plane/{0}.png'.format(dict1[each]))
         
-    elif 75 <= float(each) < 80:
-        n_size(600,600)
-        new_im.save('images/new_plane/{0}.png'.format(dict1[each]))
-        
+
+
     else:
-        print("error")
+      print("error")
         #the images are named with the date(month.week)
 #===============================================================================
 
@@ -153,3 +168,7 @@ button.grid(column=0, row=60)
 #listbox.bind('<<ListboxSelect>>', items_selected) #bind the function to the listbox
 
 window.mainloop()
+
+#for each1 in dict1.values():
+#    os.remove('images/new_plane/{0}.png'.format(each1))
+#os.rmdir('images/new_plane')       #remove the images first and remove the folder after finishing using it.
