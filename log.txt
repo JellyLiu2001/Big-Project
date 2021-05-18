@@ -32,3 +32,5 @@ yue: use tkinter to create a GUI, when user choose a date in the listbox, an ima
       be displayed,the size of the plane shows the passenger load factor at that date. 05/12/2021
 ----------------------------------------------------------------------------------------------
 Jelly: add new pic for judging the status of covid-19, and create html as a visual report. 05/16/2021
+----------------------------------------------------------------------------------------------
+yue: some improvements(add notes, delet the folder after using it, form more sizes if images)05/18/2021

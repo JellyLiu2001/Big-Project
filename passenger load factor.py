@@ -33,7 +33,11 @@ print(date1)
 dict1=dict(zip(psrate,date1))#create a dictionary
 print(dict1)
 
+sick=np.array(T_sick[1:])
+print(sick)
 
+dict2=dict(zip(psrate,sick))#create a dictionary
+print(dict2)
 
 import os
 from PIL import Image       
@@ -114,7 +118,7 @@ window.columnconfigure(0, weight = 1)
 window.rowconfigure(0, weight = 1)
 
 # step2: labels
-picture = tk.PhotoImage(file = 'images/new_plane/2.1.png') 
+picture = tk.PhotoImage(file = 'images/new_plane/2.2.png') 
 Lab = tk.Label(window, image = picture)
 Lab.grid(column=0, row=1) #set location
 #label the image(initial image)
