@@ -123,9 +123,15 @@ Lab.grid(column=0, row=1)  # set location
 # label the image(initial image)
 
                                                                                #Zhu: lable the annotation alongside simulated plane
-lc = tk.Label(window, bg='lightgrey', fg='white', font=(
-    'Arial', 14), width=13, text='Green: new case=0'"\n"'Yellow: 0<new case<=5'"\n"'Orange: 5<new case<=15'"\n"'Red: new case>15')
-lc.grid(column=1, row=30)
+lb2 = tk.Label(window, bg='lightgrey', fg='white', font=(
+    'Arial', 14), width=20, text='Green: new case=0'"\n"'Yellow: 0<new case<=5'"\n"'Orange: 5<new case<=15'"\n"'Red: new case>15')
+lb2.grid(column=1, row=30)
+
+
+lb3 = tk.Label(window, bg='lightgrey', fg='white', font=(
+    'Arial', 14), width=20, text='the larger the size'"\n"'the higher the loar factor')
+lb3.grid(column=1, row=1)
+# notes
 
 lb = tk.Label(window, bg='pink', fg='white', font=(
     'Arial', 14), width=13, text='month.week')
