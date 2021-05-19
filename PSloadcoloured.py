@@ -183,6 +183,8 @@ button.grid(column=0, row=60)
 # listbox.bind('<<ListboxSelect>>', items_selected) #bind the function to the listbox
 
 window.mainloop()
+'''
 for each1 in dict1.values():
     os.remove('images/new_plane/{0}.png'.format(each1))
 os.rmdir('images/new_plane')       #remove the images first and remove the folder after finishing using it.
+'''
