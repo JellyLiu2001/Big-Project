@@ -15,13 +15,12 @@ LOG HISTORY
 ----------------------------------------------------------------------------------------------
 名字: 修改信息. mm/dd/yyyy
 ----------------------------------------------------------------------------------------------
-Jelly: Changed all files' location and renamed to make it easy to understand. 3/23/2021
+Jelly: Changed all files' location and renamed to make it easy to understand. 03/23/2021
 ----------------------------------------------------------------------------------------------
-<<<<<<< HEAD
-yue: first edition of "Using the site of plane to represent the seat availability." 
+yue: first edition of "Using the size of plane to represent the passenger load factor". 
 generate different size of picture according to the data, add them into a folder.
-put them in one picture  3/26/2021
-=======
+generate a picture to compare their sizes.  03/26/2021
+----------------------------------------------------------------------------------------------
 Jelly: Create the file of change the plane's color. 03/26/2021
 ----------------------------------------------------------------------------------------------
 Lau: made a matplot graph(basic version) using xlrd, numpy, matplotlib. 03/24/2021
@@ -29,3 +28,12 @@ Lau: made a matplot graph(basic version) using xlrd, numpy, matplotlib. 03/24/20
 Lau: made a animated graph using pandas, seaborns, numpy, ffmpeg, matplotlib. 03/4/2021
 >>>>>>> 1015b920a1f9da0425ee3d8dc4de54d4953c45f2
 ----------------------------------------------------------------------------------------------
+yue: use tkinter to create a GUI, when user choose a date in the listbox, an image of a plane will 
+      be displayed,the size of the plane shows the passenger load factor at that date. 05/12/2021
+----------------------------------------------------------------------------------------------
+Jelly: add new pic for judging the status of covid-19, and create html as a visual report. 05/16/2021
+----------------------------------------------------------------------------------------------
+yue: some improvements(add notes, delet the folder after using it, form more sizes if images) 5/18/2021
+----------------------------------------------------------------------------------------------
+Lau: deleted covid cases from the basic line graph and coded a animated graph with simulation using
+	the library "random" for the total number.											19/5/2021

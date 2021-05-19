@@ -7,7 +7,7 @@ import numpy as np
 
 workbook = xlrd.open_workbook('T_data数据汇总.xlsx')
 xl_sheet = workbook.sheet_by_index(0)
-# reading all the data from the excel file and naming them with the relative name
+# Reading all the data from the excel file and naming them with the relative name
 T_date = xl_sheet.row_values(1)#总日期
 T_income = xl_sheet.row_values(2)#总收入
 T_psrate = xl_sheet.row_values(3)#总客座率
@@ -37,4 +37,5 @@ plt.plot(x,y3, label = "Amount of income(billions in RMB)")
 plt.plot(x,y4, label = "Amount of outcome(billion in RMB)")
 plt.xlabel('date')
 plt.legend()
+plt.savefig(fname="datachart.png")#save the chart as png
 plt.show()
