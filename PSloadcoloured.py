@@ -8,7 +8,7 @@ xlrd.xlsx.ensure_elementtree_imported(False, None)
 xlrd.xlsx.Element_has_iter = True
 
 T_sheet = xlrd.open_workbook("new data for graph.xlsx")  # path
-# T_sheet = xlrd.open_workbook("T_data数据汇总.xlsx")#path
+# T_sheet = xlrd.open_workbook("new data for graph.xlsx")#path
 xl_sheet = T_sheet.sheet_by_index(0)
 T_date = xl_sheet.row_values(1)  # date
 T_income = xl_sheet.row_values(2)  # income
@@ -52,12 +52,8 @@ if not os.path.exists('images/new_plane'):                                     #
 for each in dict1.keys(): # use for loop to change the size of the image according to the load factor
 
 
-    img = select_image(dict2[dict1[each]])  
-    #Zihe: chosing corresponsing image dependent on cases of the day 
+
    
-    if 50 <= float(each) < 55:
-        new_im = n_size(100, 100, img)
-        # use foramt to name the image with the date
 
     img = select_image(dict2[dict1[each]])                                     #Zhu: chosing corresponsing image dependent on cases of the day 
     if 50 <= float(each) < 53:
@@ -122,7 +118,7 @@ window.columnconfigure(0, weight=1)
 window.rowconfigure(0, weight=1)
 
 # step2: labels
-picture = tk.PhotoImage(file='images/new_plane/2.2.png')
+picture = tk.PhotoImage(file='images/new_plane/2.1.png')
 Lab = tk.Label(window, image = picture)
 Lab.grid(column=0, row=1)  # set location
 # label the image(initial image)
@@ -164,7 +160,7 @@ def items_selected():
     print(selected_value)
     lb['text'] = selected_value  # change the labeled text to the selected value
 
-    global file_name  # 同上，改new_plane前面的路径，改成自己桌面
+    global file_name  
     file_name = 'images/new_plane/'+selected_value+'.png'
     global picture
     global Lab
