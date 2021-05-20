@@ -5,6 +5,8 @@ In this project, we made a beautiful python chart and GUI used to retrieve the d
 We are well aware that in some areas, data cannot be processed in real time.
 This program can produce epidemic flight information in real time and use it intuitively for epidemic monitoring. 
 
+!You should open the "open this.py" file!
+
 Projectchart: Create a data chart by using xlrd, matplotlib and numpy to shows covid-19's information.
 PSloadcoloured: 
 Open this: Make a great GUI to users, they can use this sofeware without seeing boring text. 
