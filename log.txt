@@ -41,3 +41,8 @@ Zhu: added new cases roll to the excel data tabel.
         corresponding to data. simplify some codes and wrote some functions  05/17/2021
 ----------------------------------------------------------------------------------------------
 Jelly: add new pic for judging the status of covid-19, and create html as a visual report. 05/16/2021
+----------------------------------------------------------------------------------------------
+yue: some improvements(add notes, delet the folder after using it, form more sizes if images) 5/18/2021
+----------------------------------------------------------------------------------------------
+Lau: deleted covid cases from the basic line graph and coded a animated graph with simulation using
+	the library "random" for the total number.											19/5/2021

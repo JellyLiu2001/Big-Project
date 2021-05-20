@@ -21,7 +21,7 @@ psrate=np.array(T_psrate[1:])
 flight=np.array(T_flight[1:])
 income=np.array(T_income[1:])
 outcome=np.array(T_outcome[1:])
-sick=np.array(T_sick[1:])
+
 
 
 # in order to put all the plots into one graph, dividing all the values in all 5 list with a different constant to make them suitable to be put together
@@ -29,14 +29,12 @@ y1 = psrate
 y2 = flight/100
 y3 = income/10
 y4 = outcome/10
-y5 = sick/1000
 
 # plotting the graph and labelling all the lines with the units
-plt.plot(x,y1, label = "Passenger rate(percents)")
+plt.plot(x,y1, label = "Passenger rate(Percentage)")
 plt.plot(x,y2, label = "Numbers of flight(hundreds)")
-plt.plot(x,y3, label = "Amount of income(billions)")
-plt.plot(x,y4, label = "Amount of outcome(billions)")
-plt.plot(x,y5, label = "Number of cases(thousands)")
+plt.plot(x,y3, label = "Amount of income(billions in RMB)")
+plt.plot(x,y4, label = "Amount of outcome(billion in RMB)")
 plt.xlabel('date')
 plt.legend()
 plt.savefig(fname="datachart.png")#save the chart as png
