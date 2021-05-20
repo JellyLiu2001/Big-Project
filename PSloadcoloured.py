@@ -52,12 +52,8 @@ if not os.path.exists('images/new_plane'):                                     #
 for each in dict1.keys(): # use for loop to change the size of the image according to the load factor
 
 
-    img = select_image(dict2[dict1[each]])  
-    #Zihe: chosing corresponsing image dependent on cases of the day 
+
    
-    if 50 <= float(each) < 55:
-        new_im = n_size(100, 100, img)
-        # use foramt to name the image with the date
 
     img = select_image(dict2[dict1[each]])                                     #Zhu: chosing corresponsing image dependent on cases of the day 
     if 50 <= float(each) < 53:
