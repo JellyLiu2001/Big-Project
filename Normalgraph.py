@@ -11,18 +11,17 @@ import matplotlib.pyplot as plt
 workbook = xlrd.open_workbook('T_data数据汇总.xlsx')
 xl_sheet = workbook.sheet_by_index(0)
 # reading all the data from the excel file and naming them with the relative name
-T_date = xl_sheet.row_values(1)[1:]#总日期
-T_income = xl_sheet.row_values(2)[1:] #总收入
-T_psrate = xl_sheet.row_values(3)[1:]#总客座率
-T_outcome = xl_sheet.row_values(4)[1:]#总支出
-T_flight = xl_sheet.row_values(5)[1:]#总航班数
-T_sick = xl_sheet.row_values(6)[1:]#总生病人数
+T_date = xl_sheet.row_values(1)[1:]#dates
+T_income = xl_sheet.row_values(2)[1:] #amount of income
+T_psrate = xl_sheet.row_values(3)[1:]#passenger load factor
+T_outcome = xl_sheet.row_values(4)[1:]#amount of outcome
+T_flight = xl_sheet.row_values(5)[1:]#number of flights
+T_sick = xl_sheet.row_values(6)[1:]#total cases of COVID-19
 
 
 
 # making it easy for later calculation by using numpy
 x=T_date
-incomes=T_income
 psrate=np.array(T_psrate)
 flight=np.array(T_flight)
 income=np.array(T_income)
