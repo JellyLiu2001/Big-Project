@@ -8,7 +8,7 @@ xlrd.xlsx.ensure_elementtree_imported(False, None)
 xlrd.xlsx.Element_has_iter = True
 
 T_sheet = xlrd.open_workbook("new data for graph.xlsx")  # path
-# T_sheet = xlrd.open_workbook("T_data数据汇总.xlsx")#path
+# T_sheet = xlrd.open_workbook("new data for graph.xlsx")#path
 xl_sheet = T_sheet.sheet_by_index(0)
 T_date = xl_sheet.row_values(1)  # date
 T_income = xl_sheet.row_values(2)  # income
@@ -164,7 +164,7 @@ def items_selected():
     print(selected_value)
     lb['text'] = selected_value  # change the labeled text to the selected value
 
-    global file_name  # 同上，改new_plane前面的路径，改成自己桌面
+    global file_name  
     file_name = 'images/new_plane/'+selected_value+'.png'
     global picture
     global Lab
