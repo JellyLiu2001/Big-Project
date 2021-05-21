@@ -2,9 +2,8 @@ import os#OS library provides general and basic operating system interaction fun
 from tkinter import *#import all Tkinker library and used to make GUI
 root = Tk()
 root.title('Indexes')#title text
-'''
-defined four values as four buttons
-'''
+#defined four values as four buttons
+
 def project_chart():
     os.system("python Normalgraph.py")
 def data_pic():
