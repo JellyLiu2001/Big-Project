@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import random
 
-covid = pd.read_excel('T_data数据汇总.xlsx',skiprows =1)
+covid = pd.read_excel('T_data 数据汇总.xlsx',skiprows =1)
 def get_data(table,rownum,title):
     data = pd.DataFrame(table.loc[rownum][2:]).astype(float)
     data.columns = {title}
